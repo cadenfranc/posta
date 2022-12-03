@@ -48,7 +48,7 @@ class TikTokClient:
         if industry is not None:
             try:
                 params["industry_id"] = self.industry_codes[industry]
-            except KeyError:
+            except KeyError as err:
                 industries = list(self.industry_codes.keys())
                 raise KeyError(f"Industry not found. Must be one of {industries}.")
 
